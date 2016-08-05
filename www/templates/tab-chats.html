@@ -1,19 +1,16 @@
 <ion-view view-title="Chats">
   <ion-content>
+    <center>
+      <button ng-click="getData()" class="button button-clear button-positive">
+        RELOAD
+      </button>
+    </center>
+
     <ion-list>
       <!--Todo lo que empiece con ng es de Angular -->
       <!--Chats es un arreglo y chat es un elemento de este mismo -->
-      <ion-item ng-repeat="estacion in estaciones" type="item-text-wrap" class="item-remove-animate item-avatar item-icon-right">
-        <!--
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+      <ion-item ng-repeat="estacion in estaciones" type="item-text-wrap" class="item-remove-animate item-avatar item-icon-right" href="#/tab/chats/{{estacion.name}}">
 
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
-      -->
         <h2>Nombre: {{estacion.name}}</h2>
         <p>Espacios libres: {{estacion.empty_slots}}</p>
         <p>Bicicletas disponibles: {{estacion.free_bikes}}</p>

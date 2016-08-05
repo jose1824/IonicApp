@@ -14,18 +14,35 @@ angular.module('starter.controllers', [])
 })
 //Scope es el alcance, es uan variable global que existe en controllers
 //No tiene una propiedad de chats pero se la estamos agregando
-.controller('ChatsCtrl', function($scope, $http) {
+.controller('ChatsCtrl', function($scope, $http, $rootScope) {
+
+  $scope.getData = function(){
+    $scope.estaciones = []
+    $http.get('http://api.citybik.es/v2/networks/ecobici')
+        .success(function(response) {
+          $scope.estaciones = response.network.stations
+          //$scope.name = $scope.estaciones[0].name
+          //console.log("name" $scope.name);
+          $rootScope.firstStation = $scope.estaciones[0]
+          console.log("JSON ", response.network.stations.name)
+        })
+        .error(function(error) {
+          console.log("Error " + error)
+        });
+  }
+  /*
   $http.get('http://api.citybik.es/v2/networks/ecobici')
       .success(function(response) {
         $scope.estaciones = response.network.stations
       })
       .error(function(error) {
         console.log("Error " + error)
-      });
+      });*/
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('ChatDetailCtrl', function($scope, $stateParams, $rootScope) {
+  //$scope.name = $stateParams.nameStation
+  $scope.name = $rootScope.firstStation.name
 })
 
 .controller('AccountCtrl', function($scope) {
