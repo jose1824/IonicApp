@@ -3,12 +3,12 @@
     <!--Contenido -->
     <center><h2>Welcome to Ionic</h2></center>
     <ion-list>
-      <ion-item ng-repeat="tarea in tareas">
+      <ion-item ng-repeat="tarea in tareas" class="item-remove-animate item-icon-right">
           <h3>{{tarea.title}}</h3>
           <p>{{tarea.desc}}</p>
           <i class="icon ion-chevron-right icon-accessory"></i>
 
-          <ion-option-button class="button-assertive" ng-click="remove(tarea)">
+          <ion-option-button class="button-assertive">
             Delete
           </ion-option-button>
       </ion-item>

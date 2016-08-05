@@ -3,7 +3,8 @@
     <ion-list>
       <!--Todo lo que empiece con ng es de Angular -->
       <!--Chats es un arreglo y chat es un elemento de este mismo -->
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+      <ion-item ng-repeat="estacion in estaciones" type="item-text-wrap">
+        <!--
         <img ng-src="{{chat.face}}">
         <h2>{{chat.name}}</h2>
         <p>{{chat.lastText}}</p>
@@ -12,6 +13,10 @@
         <ion-option-button class="button-assertive" ng-click="remove(chat)">
           Delete
         </ion-option-button>
+      -->
+        <h2>Nombre: {{estacion.name}}</h2>
+        <p>Espacios libres: {{estacion.empty_slots}}</p>
+        <p>Bicicletas disponibles: {{estacion.free_bikes}}</p>
       </ion-item>
     </ion-list>
   </ion-content>
