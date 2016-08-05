@@ -6,6 +6,11 @@
       <ion-item ng-repeat="tarea in tareas">
           <h3>{{tarea.title}}</h3>
           <p>{{tarea.desc}}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+
+          <ion-option-button class="button-assertive" ng-click="remove(tarea)">
+            Delete
+          </ion-option-button>
       </ion-item>
     </ion-list>
   </ion-content>
