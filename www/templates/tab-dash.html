@@ -1,0 +1,12 @@
+<ion-view view-title="Home">
+  <ion-content class="padding">
+    <!--Contenido -->
+    <center><h2>Welcome to Ionic</h2></center>
+    <ion-list>
+      <ion-item ng-repeat="tarea in tareas">
+          <h3>{{tarea.title}}</h3>
+          <p>{{tarea.desc}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
